@@ -52,4 +52,20 @@ public class Queue <ContentType>{
             }
         }
     }
+
+    public void  dequeue(){
+        if(head != tail){
+            head = head.getNext();
+        }else{
+            head = null;
+            tail = null;
+        }
+    }
+
+    public ContentType front(){
+        if (!isEmpty()){
+            return head.getContent();
+        }
+        return null;
+    }
 }
